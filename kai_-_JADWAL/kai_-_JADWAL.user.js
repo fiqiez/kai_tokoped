@@ -15,18 +15,23 @@ return c?(c=Sa(a,b),Oa.test(c)?n(a).position()[b]+"px":c):void 0})}),n.each({Hei
 
 $(".itTable").ready(function(){
 
-	trainList = Array("FAJAR UTAMA YOGYA","GAJAHWONG")
-	allForm = $($(".itTable").get(0)).find("form");
-	allFormLen = allForm.length;
+	var trainList = Array("FAJAR UTAMA YOGYA","GAJAHWONG")
+	var allForm = $($(".itTable").get(0)).find("form");
+	var allFormLen = allForm.length;
+	var found = false;
 	if(allFormLen > 0){
 	for(var i=0;i<allFormLen;i++){
 
 	  arrVal = $(allForm[i]).children();
 	  if($.inArray($($(arrVal).get(6)).val(), trainList) > -1){
 	  $($(arrVal).get(17)).click();
-
+	  found = true;
 	  break;
-	  }	  
+	  }
+		
+	 if(i == (allFormLen-1) && found == false){
+	 location.href = location.href.split("?")[0];
+	 }	  
 	}
 	}else{
 		location.href = location.href.split("?")[0];

@@ -23,8 +23,7 @@ function goTicket(){
 		*/	
 		 
 		if(i == (allTR.length - 1)){
-		//location.reload();	
-		alert(1);
+		location.reload();	
 		}
 	}	
 }
